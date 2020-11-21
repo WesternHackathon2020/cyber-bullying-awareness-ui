@@ -1,4 +1,5 @@
 const initialStateFlaggedReducer = {
+    flagged: [],
 };
 
 export default (state = initialStateFlaggedReducer, action) => {
