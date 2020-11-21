@@ -57,15 +57,9 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function PersistentDrawerLeft(props) {
-    const [isOpen,handleClose] = useState(props);
+export default function PersistentDrawerLeft() {
     const classes = useStyles();
-    useEffect(() => {
-        handleClose(props);
-    }, [props]);
 
-    console.log(isOpen)
-    console.log(useState(props).isOpen)
     const list = () => (
         <div
             className={clsx(classes.list)}
