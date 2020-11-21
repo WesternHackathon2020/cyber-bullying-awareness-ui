@@ -25,7 +25,6 @@ module.exports = merge(common, {
 		}],
 	},
 	plugins: [
-		new webpack.DefinePlugin(envKeys),
 		new CleanWebpackPlugin(['dist/css', 'dist/js']),
 		new MiniCssExtractPlugin({
 			filename: 'css/[name].css',
