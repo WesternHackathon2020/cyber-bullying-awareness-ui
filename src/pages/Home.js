@@ -31,7 +31,7 @@ class Home extends React.Component {
                 >
                     <Toolbar>
                         <Typography variant="h6" noWrap>
-                            Persistent drawer
+                            Cyber Bullying Detector
                         </Typography>
                     </Toolbar>
                 </AppBar>
