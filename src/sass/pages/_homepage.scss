@@ -1,12 +1,19 @@
 .sidebar{
-  width:25%;
+  width:5%;
   display:flex;
-  position:absolute;
-}
-.left-sidebar{
-  width: 250px
-}
-.sidebar-list-item{
-  padding-bottom: 10px;
+  margin-top:55px;
+  border: solid 1px;
+  height:100%;
 }
 
+.homepage{
+  display:flex;
+  flex-direction:row;
+  width:100%;
+}
+
+.main-section{
+  display:flex;
+  width:75%;
+  margin-top:60px;
+}
