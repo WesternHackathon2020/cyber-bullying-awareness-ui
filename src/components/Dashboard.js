@@ -11,47 +11,9 @@ import AssessmentIcon from '@material-ui/icons/Assessment';
 import EmailIcon from '@material-ui/icons/Email';
 import ExitIcon from '@material-ui/icons/ExitToApp';
 
-//Top
-import TeacherMessage from "./Dash/TeacherMessage";
-import RecentOffences from "./Dash/RecentOffences";
-import StudentRatings from "./Dash/StudentRatings";
-
-//Bottom
-import Stats from "./Dash/Stats";
-import ClassList from "./Dash/ClassList";
+import ClassSelection from "./Dash/ClassSelection";
+import StudentInfo from "./Dash/StudentInfo";
 import StudentsList from "./Dash/StudentsList";
-
-const AntTabs = withStyles({
-    root: {
-        borderBottom: '1px solid #e8e8e8',
-    },
-    indicator: {
-        backgroundColor: '#48286D',
-    },
-})(Tabs);
-
-const AntTab = withStyles((theme) => ({
-    root: {
-        textTransform: 'none',
-        fontWeight: theme.typography.fontWeightMedium,
-        fontSize: 24,
-        marginRight: theme.spacing(4),
-        color: "#C9D2DE",
-
-        '&:hover': {
-            color: '#48286D',
-            opacity: 1,
-
-        },
-        '&$selected': {
-            color: '#48286D',
-        },
-        '&:focus': {
-            color: '#48286D',
-        },
-    },
-    selected: {},
-}))((props) => <Tab disableRipple {...props} />);
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -76,34 +38,27 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Dashboard({ pageIndex }) {
+
+export default function Dashboard() {
     const classes = useStyles();
-    const [value, setValue] = React.useState(0);
+    const [selectedStudent, setSelectedStudent] = React.useState(null);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
 
-
     return (
         <Box className={classes.root}>
             <Box className={classes.top}>
-                <TeacherMessage/>
-                <RecentOffences/>
-                <StudentRatings/>
+                <ClassSelection />
+                <StudentInfo />
             </Box>
 
             <Box className={classes.bottom}>
-                <AntTabs value={value} onChange={handleChange}>
-                    <AntTab label="Stats" />
-                    <AntTab label="Class List" />
-                    <AntTab label="Student List" />
-                </AntTabs>
-
-                {value == 0 ? <Stats/> : <Box />}
+               <StudentsList/>
+                {/* {value == 0 ? <Stats/> : <Box />}
                 {value == 1 ? <ClassList/> : <Box />}
-                {value == 2 ? <StudentsList/> : <Box />}
-      
+                {value == 2 ? <StudentsList/> : <Box />} */}
             </Box>
         </Box>
     )

@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 export default function StudentList({ pageIndex }) {
     const classes = useStyles();
     return (
-        <Paper style={{width: "900px", height: "300px", padding: 15, margin: 15}}>
+        <Paper style={{width: "100%", height: "100%", padding: 15, margin: 15}}>
             <Typography>Student List</Typography>
         </Paper>
     );

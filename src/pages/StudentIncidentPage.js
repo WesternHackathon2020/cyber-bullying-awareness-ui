@@ -1,3 +1,4 @@
+
 import React from 'react';
 import SideBar from "../components/SideBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -7,15 +8,10 @@ import NavBar from "../components/NavBar";
 import Dashboard from "../components/Dashboard";
 import DashPage from './DashPage';
 
-class Home extends React.Component {
-
-    render(){
-        return(
-            <DashPage>
-                <Dashboard />
-            </DashPage>
-        );
-    }
+export default function DashPage({ children }) {
+  return (
+    <DashPage>
+      <Dashboard />
+    </DashPage>
+  );
 }
-
-export default Home;

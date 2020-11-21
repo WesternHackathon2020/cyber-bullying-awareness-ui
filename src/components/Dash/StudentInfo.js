@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -18,12 +19,16 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function ClassList({ pageIndex }) {
+
+export default function StudentInfo({ studentName = "Will Hutchinson", phoneNumber = "555-555-5555", numOffences = 22 }) {
     const classes = useStyles();
 
     return (
-        <Paper style={{width: "900px", height: "300px", padding: 15, margin: 15}}>
-            <Typography>Class List</Typography>
+        <Paper style={{ flexGrow: 1, minWidth: "300px", height: "100%", padding: 15, margin: 15 }}>
+            <Typography variant="h3">Student Info</Typography>
+            <Typography>Name: {studentName}</Typography>
+            <Typography>Parent or Guardian's Number: {phoneNumber}</Typography>
+            <Typography>Number of offences: {numOffences}</Typography>
         </Paper>
     );
 }
