@@ -1,32 +1,23 @@
 import React from 'react';
 import SideBar from "../components/SideBar";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
+import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
-
+import NavBar from "../components/NavBar";
 class Home extends React.Component {
 
     render(){
         return(
-            <div className="homepage">
+            <Box>
                 <CssBaseline />
-                <AppBar
-                    position="fixed"
-                >
-                    <Toolbar>
-                        <Typography variant="h6" noWrap>
-                            Cyber Bullying Detector
-                        </Typography>
-                    </Toolbar>
-                </AppBar>
-                <div className="sidebar">
-                    <SideBar/>
-                </div>
-                <div className="main-section">
-                    MAIN
-                </div>
-            </div>
+                <NavBar></NavBar>
+                <SideBar/>
+                <Box>
+                    <Typography>
+                        Home
+                    </Typography>
+                </Box>
+            </Box>
         );
     }
 }

@@ -1,84 +1,71 @@
-import React, {useEffect, useState} from 'react';
-import clsx from 'clsx';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
+import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ListItem from '@material-ui/core/ListItem';
-import SettingsIcon from '@material-ui/icons/Settings'
-import AssessmentIcon from '@material-ui/icons/Assessment'
+import { Link } from "react-router-dom";
+import { Box, Typography } from "@material-ui/core";
+import SettingsIcon from '@material-ui/icons/Settings';
+import AssessmentIcon from '@material-ui/icons/Assessment';
+import EmailIcon from '@material-ui/icons/Email';
+import ExitIcon from '@material-ui/icons/ExitToApp';
 
-const drawerWidth = 240;
+const drawerWidth = 70;
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-    },
-    title: {
-        flexGrow: 1,
-    },
-    hide: {
-        display: 'none',
-    },
+
     drawer: {
-        [theme.breakpoints.up('sm')]: {
-            width: drawerWidth,
-            flexShrink: 0,
-        },
+        width: 150,
+        flexShrink: 0,
     },
     drawerPaper: {
         width: drawerWidth,
     },
-    drawerHeader: {
-        display: 'flex',
-        alignItems: 'center',
-        padding: theme.spacing(0, 1),
-        // necessary for content to be below app bar
-        ...theme.mixins.toolbar,
-        justifyContent: 'flex-start',
+
+    largeIcon: {
+        width: 40,
+        height: 40,
+        // color: '#707070'
     },
-    content: {
-        flexGrow: 1,
-        padding: theme.spacing(3),
-        transition: theme.transitions.create('margin', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-        }),
-        marginRight: -drawerWidth,
-    },
-    contentShift: {
-        transition: theme.transitions.create('margin', {
-            easing: theme.transitions.easing.easeOut,
-            duration: theme.transitions.duration.enteringScreen,
-        }),
-        marginRight: 0,
-    },
+
 }));
 
-export default function PersistentDrawerLeft() {
+export default function SideBar2({ pageIndex }) {
     const classes = useStyles();
 
-    const list = () => (
-        <div
-            className={clsx(classes.list)}
-            role="presentation"
+    return (
+        <Drawer
+            variant="permanent"
+            className={classes.drawer}
+            classes={{
+                paper: classes.drawerPaper,
+            }}
         >
+
+            <Typography>CBD</Typography>
+            <Toolbar />
             <List>
                 <ListItem button key={"Settings"} className="sidebar-list-item">
-                    <SettingsIcon/>
+                    <SettingsIcon className={classes.largeIcon} />
+                    {/* <Typography>Settings</Typography> */}
                 </ListItem>
-                <ListItem button key={"Assessment"} className="sidebar-list-item">
-                    <AssessmentIcon/>
-                </ListItem>
-            </List>
-        </div>
-    );
 
-    return (
-        <div>
-                {list()}
-        </div>
+                <ListItem button key={"Assessment"} className="sidebar-list-item">
+                    <AssessmentIcon className={classes.largeIcon} />
+                </ListItem>
+
+                <ListItem button key={"Email"} className="sidebar-list-item">
+                    <EmailIcon className={classes.largeIcon} />
+                </ListItem>
+
+                <ListItem button key={"Logout"} className="sidebar-list-item">
+                    <ExitIcon className={classes.largeIcon} />
+                </ListItem>
+
+
+            </List>
+
+        </Drawer>
     );
 }
