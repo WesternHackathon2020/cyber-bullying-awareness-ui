@@ -10,6 +10,17 @@ import SettingsIcon from '@material-ui/icons/Settings';
 import AssessmentIcon from '@material-ui/icons/Assessment';
 import EmailIcon from '@material-ui/icons/Email';
 import ExitIcon from '@material-ui/icons/ExitToApp';
+
+//Top
+import TeacherMessage from "./Dash/TeacherMessage";
+import RecentOffences from "./Dash/RecentOffences";
+import StudentRatings from "./Dash/StudentRatings";
+
+//Bottom
+import Stats from "./Dash/Stats";
+import ClassList from "./Dash/ClassList";
+import StudentsList from "./Dash/StudentsList";
+
 const AntTabs = withStyles({
     root: {
         borderBottom: '1px solid #e8e8e8',
@@ -52,8 +63,11 @@ const useStyles = makeStyles((theme) => ({
     },
 
     top: {
+        marginTop: "100px",
         width: "100%",
-        height: "50%",
+        height: "50% - 100px",
+        display: "flex",
+        flexDirection: "row",
     },
 
     bottom: {
@@ -74,7 +88,9 @@ export default function Dashboard({ pageIndex }) {
     return (
         <Box className={classes.root}>
             <Box className={classes.top}>
-                Top
+                <TeacherMessage/>
+                <RecentOffences/>
+                <StudentRatings/>
             </Box>
 
             <Box className={classes.bottom}>
@@ -84,9 +100,11 @@ export default function Dashboard({ pageIndex }) {
                     <AntTab label="Student List" />
                 </AntTabs>
 
-                
+                {value == 0 ? <Stats/> : <Box />}
+                {value == 1 ? <ClassList/> : <Box />}
+                {value == 2 ? <StudentsList/> : <Box />}
+      
             </Box>
-
         </Box>
     )
 }
