@@ -11,7 +11,7 @@ import AssessmentIcon from '@material-ui/icons/Assessment';
 import EmailIcon from '@material-ui/icons/Email';
 import ExitIcon from '@material-ui/icons/ExitToApp';
 
-const drawerWidth = 70;
+const drawerWidth = 60;
 
 const useStyles = makeStyles((theme) => ({
 
@@ -23,15 +23,19 @@ const useStyles = makeStyles((theme) => ({
         width: drawerWidth,
     },
 
-    largeIcon: {
-        width: 40,
-        height: 40,
-        // color: '#707070'
+    icon: {
+        width: 30,
+        height: 30,
+    },
+
+    selectedIcon: {
+        width: 30,
+        height: 30,
     },
 
 }));
 
-export default function SideBar2({ pageIndex }) {
+export default function SideBar({ pageIndex }) {
     const classes = useStyles();
 
     return (
