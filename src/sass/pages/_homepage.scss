@@ -1,0 +1,21 @@
+.sidebar{
+  width:5%;
+  display:flex;
+  margin-top:115px;
+  border: solid 1px;
+  height:100%;
+  min-height: 100vh;
+}
+
+.homepage{
+  display:flex;
+  flex-direction:row;
+  width:100%;
+}
+
+.main-section{
+  display:flex;
+  width:75%;
+  margin-top:125px;
+  margin-left:15px;
+}
