@@ -21,7 +21,7 @@ export default function ClassSelection({ onSelection }) {
 
     return (
         <Paper style={{ minWidth: "300px", minHeight: "150px", padding: 15, margin: 15 }}>
-            <Typography>Select a Class</Typography>
+            <Typography variant="h5" style={{ paddingBottom: 15, color:"#48286D" }}>View Class</Typography>
 
             <FormControl className={classes.formControl}>
                 <InputLabel>Class</InputLabel>
