@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function WelcomeMessage({ teacher = {name: "Ms. Smith"} }) {
+export default function WelcomeMessage({ teacher = {name: "Ms. Krabappel"} }) {
     const classes = useStyles();
 
     return (

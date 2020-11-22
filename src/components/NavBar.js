@@ -65,7 +65,7 @@ export default function NavBar({ pageIndex }) {
                     <Box width={100}>
                         <Typography style={{ color: '#1E2B37' }}>
                             Hello, {' '}
-                            <Typography style={{ color: '#1E2B37', fontWeight: 700 }}>Ms. Krabappel</Typography>
+                            <Typography style={{ color: '#1E2B37', fontWeight: 700 }}>Edna</Typography>
                         </Typography>
                     </Box>
 
