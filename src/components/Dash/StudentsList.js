@@ -1,21 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, Typography, Paper, Divider, ListItemText, ListItem, List, ListItemSecondaryAction, Avatar, TableContainer, Table, TableHead, TableRow, TableCell, TableBody } from "@material-ui/core";
-
-const flaggedContent = [
-    { name: "Nathan", message: "wow you suck", time: "9:14 am", numOffences: 2, phoneNumber: "354-355-1479" },
-    { name: "Harry", message: "wow you duck", time: "9:58 am", numOffences: 0, phoneNumber: "474-125-8742" },
-    { name: "Navdeep", message: "sextant is an instrument", time: "11:11 am", numOffences: 1, phoneNumber: "814-375-8249" },
-    { name: "Elton", message: "need more ice cream", time: "11:44 am", numOffences: 2, phoneNumber: "874-311-6784" },
-    { name: "Nathan", message: "wow you suck", time: "9:14 am", numOffences: 2, phoneNumber: "354-355-1479" },
-    { name: "Harry", message: "wow you duck", time: "9:58 am", numOffences: 0, phoneNumber: "474-125-8742" },
-    { name: "Navdeep", message: "sextant is an instrument", time: "11:11 am", numOffences: 1, phoneNumber: "814-375-8249" },
-    { name: "Elton", message: "need more ice cream", time: "11:44 am", numOffences: 2, phoneNumber: "874-311-6784" },
-    { name: "Nathan", message: "wow you suck", time: "9:14 am", numOffences: 2, phoneNumber: "354-355-1479" },
-    { name: "Harry", message: "wow you duck", time: "9:58 am", numOffences: 0, phoneNumber: "474-125-8742" },
-    { name: "Navdeep", message: "sextant is an instrument", time: "11:11 am", numOffences: 1, phoneNumber: "814-375-8249" },
-    { name: "Elton", message: "need more ice cream", time: "11:44 am", numOffences: 2, phoneNumber: "874-311-6784" },
-];
+import { Box, Typography, Paper, Divider, ListItemText, ListItem, List, ListItemSecondaryAction, Avatar, TableContainer, Table, TableHead, TableRow, TableCell, TableBody, Button } from "@material-ui/core";
+import ForwardIcon from '@material-ui/icons/Forward';
 
 const useStyles = makeStyles((theme) => ({
     list: {
@@ -29,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function StudentList({ onClicked }) {
+export default function StudentList({ onClicked, flaggedList=[] }) {
     const classes = useStyles();
     const [selected, setSelected] = React.useState(null);
 
@@ -39,93 +25,49 @@ export default function StudentList({ onClicked }) {
             return setSelected(null);
         setSelected(flagged);
     }
-
-    const getList = () => {
-        return (
-            <List style={{ maxHeight: '100%', overflow: 'auto' }}>
-                {flaggedContent.map((content) => {
-                    return (
-                        <Box>
-                            <ListItem key={content} button onClick={() => { onClickedFlagged(content); }} style={selected == content ? { border: "5px solid #66CC00" } : {}}>
-                                <Box style={{ marginRight: 30 }}>
-                                    <Box>
-                                        <Avatar
-                                            alt={content.name}
-                                        // src={`/static/images/avatar/${value + 1}.jpg`}
-                                        />
-                                        <Typography>
-                                            {content.name}
-                                        </Typography>
-                                    </Box>
-
-                                </Box>
-                                <ListItemText> {content.message} </ListItemText>
-                                <ListItemSecondaryAction>
-                                    {content.time}
-                                </ListItemSecondaryAction>
-                            </ListItem>
-                            <Divider variant="inset" component="li" />
-                        </Box>
-                    );
-                })}
-            </List>
-        );
-    }
-
+    // console.log(flaggedList);
 
     return (
-        // getList()
-        // <Paper style={{ width: "100% - 30px", maxHeight: "100%", padding: 15, margin: 15, marginBottom: 0 }}>
-        <Paper style={{ width: "100% - 30px", maxHeight: "100%", overflow: 'auto', padding: 15, margin: 15, marginBottom: 0 }}>
-            <Typography >Possible Cyber Bullying Detected</Typography>
 
-            {/* <List style={{maxHeight: '100%', overflow: 'auto'}}> */}
-            {/* <List style={{maxHeight: '100%', overflow: 'auto'}}>
-                {flaggedContent.map((content) => {
-                    return (
-                        <Box>
-                            <ListItem key={content} button onClick={() => { onClickedFlagged(content); }} style={selected == content ? { border: "5px solid #66CC00" } : {}}>
-                                <Box style={{ marginRight: 30 }}>
-                                    <Box>
-                                        <Avatar
-                                            alt={content.name}
-                                        // src={`/static/images/avatar/${value + 1}.jpg`}
-                                        />
-                                        <Typography>
-                                            {content.name}
-                                        </Typography>
-                                    </Box>
-
-                                </Box>
-                                <ListItemText> {content.message} </ListItemText>
-                                <ListItemSecondaryAction>
-                                    {content.time}
-                                </ListItemSecondaryAction>
-                            </ListItem>
-                            <Divider variant="inset" component="li" />
-                        </Box>
-                    );
-                })}
-            </List> */}
+        <Box style={{ width: "100% - 30px", maxHeight: "100%", overflow: 'auto', padding: 15, margin: 15, marginBottom: 0 }}>
 
             <TableContainer component={Paper}>
                 <Table className={classes.table}>
                     <TableHead>
                         <TableRow>
+                            <TableCell align="left">  </TableCell>
                             <TableCell align="left"> Sender</TableCell>
+                            <TableCell align="center">  </TableCell>
+
+                            <TableCell align="left">  </TableCell>
                             <TableCell align="left"> Sent To</TableCell>
+
                             <TableCell align="left"> Message</TableCell>
                             <TableCell align="right">Action</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {
-                            rows.map((row) => (
-                                <TableRow key={row.name} Button>
-                                    <TableCell component="th" scope="row">{row.name}</TableCell>
-                                    <TableCell align="left">{row.calories}</TableCell>
-                                    <TableCell align="left">{row.fat}</TableCell>
-                                    <TableCell align="left">{row.carbs}</TableCell>
+                            flaggedList.map((row) => (
+                                <TableRow 
+                                    key={row._id}  
+                                    onClick={() => { onClickedFlagged(row); }}
+                                    style={selected == row ? { borderLeft: "10px solid #66CC00" } : {paddingLeft:10}}
+                                >
+                                    <TableCell align="left" scope="row" width={73}> <Avatar/> </TableCell>
+                                    <TableCell align="left" scope="row" >{row.studentName} </TableCell>
+
+                                    <TableCell align="left" scope="row"> <ForwardIcon/> </TableCell>
+
+                                    <TableCell align="left" scope="row" width={73}> <Avatar/> </TableCell>
+                                    <TableCell align="left">{row.messageTo}</TableCell>
+
+                                    <TableCell align="left">{row.contentText}</TableCell>
+                                    <TableCell align="right">
+                                        <Button variant="contained">
+                                            Select
+                                        </Button>
+                                    </TableCell>
                                 </TableRow>
                             ))
                         }
@@ -133,6 +75,6 @@ export default function StudentList({ onClicked }) {
                 </Table>
             </TableContainer>
 
-        </Paper>
+        </Box>
     );
 }

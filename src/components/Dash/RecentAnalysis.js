@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function RecentAnalysis({ flaggedContent }) {
+export default function RecentAnalysis({ flagged }) {
     const classes = useStyles();
 
     const getTotalFlagged = () => {

@@ -12,11 +12,11 @@ const useStyles = makeStyles((theme) => ({
 export default function ClassSelection({ onSelection }) {
     const classes = useStyles();
     const options = ["Math", "English", "Science"];
-    const uuids = ["123456789", "234567890", "345678901"];
     const [course, setCourse] = React.useState(options[0]);
 
     const handleChange = (event) => {
         setCourse(event.target.value);
+        onSelection(event.target.value);
     };
 
     return (

@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Box } from '@material-ui/core';
 
 import ClassSelection from './Dash/ClassSelection';
 import StudentInfo from './Dash/StudentInfo';
 import StudentsList from './Dash/StudentsList';
+// import api from "../api";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -40,24 +41,33 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Dashboard() {
+export default function Dashboard({courseList=[], flaggedMap={Math:[], English:[], Science:[]}}) {
     const classes = useStyles();
     const [selectedFlagged, setSelectedFlagged] = React.useState(null);
+    const [selectedClass, setSelectedClass] = React.useState("Math");
+    // const [isLoading, setIsLoading] = React.useState(true);
 
     const onSelectedFlagged = (flagged) => {
-        if (selectedFlagged === flagged) return setSelectedFlagged(null);
-        return setSelectedFlagged(flagged);
+        if (selectedFlagged == flagged) return setSelectedFlagged(null);
+        setSelectedFlagged(flagged);
+        console.log(":flagging id: ", flagged.studentId);
+    };
+
+    const onClassSelected = (className) => {
+        setSelectedClass(className);
+        console.log(className);
     };
 
     return (
+
         <Box className={classes.root}>
             <Box className={classes.top}>
-                <ClassSelection />
-                {selectedFlagged != null ? <StudentInfo studentName={selectedFlagged?.name} phoneNumber={selectedFlagged?.phoneNumber} numOffences={selectedFlagged?.numOffences} /> : <Box />}
+                <ClassSelection courseList={courseList} flaggedMap={flaggedMap} onSelection={onClassSelected}/>
+                <StudentInfo flagged={selectedFlagged} />
             </Box>
 
             <Box className={classes.bottom}>
-               <StudentsList onClicked={onSelectedFlagged} />
+                <StudentsList onClicked={onSelectedFlagged} flaggedList={flaggedMap[selectedClass]}/>
 
             </Box>
         </Box>
