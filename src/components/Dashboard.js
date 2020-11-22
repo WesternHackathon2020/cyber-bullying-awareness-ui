@@ -19,23 +19,33 @@ const useStyles = makeStyles((theme) => ({
     root: {
         marginLeft: 60,
         padding: 15,
+        display: "flex",
         flexDirection: "column",
         flexGrow: 1,
         width: '100% - 60px',
         height: '100%',
+        // backgroundColor:"red",
+        overflow: "hidden"
+
     },
 
     top: {
         marginTop: "100px",
+        marginBottom: "60px",
+
         width: "100%",
-        height: "50% - 100px",
+        height: "180px",
         display: "flex",
         flexDirection: "row",
     },
 
     bottom: {
+        paddingBottom: "15px",
+
         width: "100%",
-        height: "50%",
+        flexGrow: 1,
+        // backgroundColor:"blue",
+        overflow: "hidden"
     },
 }));
 
@@ -58,14 +68,12 @@ export default function Dashboard() {
         <Box className={classes.root}>
             <Box className={classes.top}>
                 <ClassSelection />
-                {selectedFlagged != null ? <StudentInfo studentName={selectedFlagged?.name}/> : <Box/>}
+                {selectedFlagged != null ? <StudentInfo studentName={selectedFlagged?.name} phoneNumber={selectedFlagged?.phoneNumber} numOffences={selectedFlagged?.numOffences} /> : <Box/>}
             </Box>
 
             <Box className={classes.bottom}>
                <StudentsList onClicked={onSelectedFlagged}/>
-                {/* {value == 0 ? <Stats/> : <Box />}
-                {value == 1 ? <ClassList/> : <Box />}
-                {value == 2 ? <StudentsList/> : <Box />} */}
+
             </Box>
         </Box>
     )
