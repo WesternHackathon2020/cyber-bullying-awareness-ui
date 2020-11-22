@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 import { Box, IconButton, Toolbar, Typography } from '@material-ui/core';
 
 const logo = 'https://media.discordapp.net/attachments/779529187693953038/779709335755423783/received_189152492797232.webp';
-const avatar = 'https://avatars0.githubusercontent.com/u/9293542?s=460&u=c8cada459ed5e1e1f8ca0af10f2a6f1958a4d097&v=4';
+const avatar = 'https://acclaimmag.com/wp-content/uploads/2013/11/simo2.jpg';
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
     appBar: {
         zIndex: theme.zIndex.drawer + 1,
+        // backgroundColor: '#48286D',
         backgroundColor: 'white',
         display: 'flex',
         justifyContent: 'space-between',
@@ -38,37 +39,38 @@ export default function NavBar({ pageIndex }) {
     return (
         <div className={classes.root} display="flex">
             <CssBaseline />
-            <AppBar className={classes.appBar} position="fixed"> 
+            <AppBar className={classes.appBar} position="fixed">
                 <Toolbar className={classes.root} flex="1">
                     <Link to="/">
                         <img src={logo} alt="Cyber Bully Detector" style={{ maxHeight: '60px', paddingTop: '10px', paddingLeft: '15px', paddingRight: '15px' }} />
                     </Link>
-                    
-                    <Typography variant="h4" style={{ color: '#1E2B37', paddingLeft: 30 }}>Teacher Dashboard</Typography>
+
+                    {/* <Typography variant="h4" style={{ color: '#1E2B37', paddingLeft: 30 }}>Teacher Dashboard</Typography> */}
+                    {/* <Typography variant="h5" style={{ paddingBottom: 10, fontWeight: 800, color:"#48286D" }}>Cyber Bully Detector - Teacher Dashboard</Typography> */}
+                    <Typography variant="h5" style={{ paddingBottom: 10, fontWeight: 800, color: "#48286D" }}>Cyber Bully Detector</Typography>
                     <Box className={classes.flex}> </Box>
 
                     <IconButton>
-                        <EmailIcon />
+                        <EmailIcon style={{ color: "#48286D" }} />
                     </IconButton>
 
                     <IconButton>
-                        <NotificationsIcon />
+                        <NotificationsIcon style={{ color: "#48286D" }} />
                     </IconButton>
 
-                    <Avatar alt="Isaiah Ballah" src={avatar} />
+                    <Avatar alt="Edna Krabappel" src={avatar} />
 
                     <Box width={20} />
 
                     <Box width={100}>
                         <Typography style={{ color: '#1E2B37' }}>
-                            Hello, 
-{' '}
-<Typography style={{ color: '#1E2B37', fontWeight: 700 }}>Isaiah!</Typography>
+                            Hello, {' '}
+                            <Typography style={{ color: '#1E2B37', fontWeight: 700 }}>Edna</Typography>
                         </Typography>
                     </Box>
 
                     <IconButton>
-                        <MenuIcon />
+                        <MenuIcon style={{ color: "#48286D" }}/>
                     </IconButton>
 
                 </Toolbar>
