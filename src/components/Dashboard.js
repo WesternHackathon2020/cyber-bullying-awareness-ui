@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 
 import ClassSelection from './Dash/ClassSelection';
 import StudentInfo from './Dash/StudentInfo';
 import StudentsList from './Dash/StudentsList';
-// import api from "../api";
+import WelcomeMessage from "./Dash/WelcomeMessage";
 
 const useStyles = makeStyles((theme) => ({
     root: {
+        paddingTop:60,
         marginLeft: 60,
         padding: 15,
         display: 'flex',
@@ -22,9 +23,10 @@ const useStyles = makeStyles((theme) => ({
     },
 
     top: {
-        marginTop: '100px',
+        // marginTop: '100px',
         marginBottom: '60px',
-
+        marginTop: "0px",
+        paddingTop: "0px",
         width: '100%',
         height: '180px',
         display: 'flex',
@@ -61,6 +63,8 @@ export default function Dashboard({courseList=[], flaggedMap={Math:[], English:[
     return (
 
         <Box className={classes.root}>
+            <WelcomeMessage />
+            <Typography variant="h5" style={{ marginLeft:15, paddingBottom: 0, marginBottom: 0, color:"#48286D" }}>Quick Stats</Typography>
             <Box className={classes.top}>
                 <ClassSelection courseList={courseList} flaggedMap={flaggedMap} onSelection={onClassSelected}/>
                 <StudentInfo flagged={selectedFlagged} flaggedList={flaggedMap[selectedClass]} />

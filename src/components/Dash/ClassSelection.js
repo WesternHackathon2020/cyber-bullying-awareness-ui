@@ -20,7 +20,7 @@ export default function ClassSelection({ onSelection }) {
     };
 
     return (
-        <Paper style={{ minWidth: "300px", minHeight: "150px", padding: 15, margin: 15 }}>
+        <Paper style={{ minWidth: "300px", height: "130px", padding: 15, margin: 15, marginTop: 0 }}>
             <Typography variant="h5" style={{ paddingBottom: 15, color:"#48286D" }}>View Class</Typography>
 
             <FormControl className={classes.formControl}>
@@ -32,7 +32,7 @@ export default function ClassSelection({ onSelection }) {
                     style={{
                         // padding: 15,
                         width: 250,
-                        height: 50
+                        height: 40
                     }}
                 >
 

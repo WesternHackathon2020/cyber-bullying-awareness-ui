@@ -28,7 +28,7 @@ export default function RecentAnalysis({ flaggedList }) {
     }
 
     return (
-        <Paper style={{ flexGrow: 1, minWidth: "300px", height: "100%", padding: 15, margin: 15 }}>
+        <Paper style={{ flexGrow: 1, minWidth: "300px", height: "130px", padding: 15, margin: 15, marginTop: 0  }}>
             <Typography variant="h5" style={{ paddingBottom: 15, color:"#48286D" }}>Recent Analysis</Typography>
             <Typography variant="h4" style={{ paddingBottom: 15, fontWeight:800 }}>{getTotalFlagged()} New Offenses</Typography>
 
