@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 import { Box, IconButton, Toolbar, Typography } from '@material-ui/core';
 
 const logo = 'https://media.discordapp.net/attachments/779529187693953038/779709335755423783/received_189152492797232.webp';
-const avatar = 'https://avatars0.githubusercontent.com/u/9293542?s=460&u=c8cada459ed5e1e1f8ca0af10f2a6f1958a4d097&v=4';
+const avatar = 'https://acclaimmag.com/wp-content/uploads/2013/11/simo2.jpg';
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
@@ -58,14 +58,14 @@ export default function NavBar({ pageIndex }) {
                         <NotificationsIcon style={{ color: "#48286D" }} />
                     </IconButton>
 
-                    <Avatar alt="Isaiah Ballah" src={avatar} />
+                    <Avatar alt="Edna Krabappel" src={avatar} />
 
                     <Box width={20} />
 
                     <Box width={100}>
                         <Typography style={{ color: '#1E2B37' }}>
                             Hello, {' '}
-                            <Typography style={{ color: '#1E2B37', fontWeight: 700 }}>Isaiah!</Typography>
+                            <Typography style={{ color: '#1E2B37', fontWeight: 700 }}>Ms. Krabappel</Typography>
                         </Typography>
                     </Box>
 
