@@ -2,6 +2,7 @@ import React from 'react';
 import Dashboard from '../components/Dashboard';
 import DashPage from './DashPage';
 import api from "../api";
+import TelusContactContainer from "../components/TelusBottomBar/TelusContactContainer";
 
 // const Home = () => (
 //     <DashPage>
@@ -57,6 +58,7 @@ export default class Home extends React.Component {
         return (
             <DashPage>
                 <Dashboard flaggedMap={this.state.flaggedMap} courseList={["Math", "English", "Science"]}/>
+                <TelusContactContainer/>
             </DashPage>
         );
     }
