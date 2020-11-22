@@ -4,8 +4,7 @@ import Drawer from '@material-ui/core/Drawer';
 import Toolbar from '@material-ui/core/Toolbar';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import { Link } from "react-router-dom";
-import { Box, Typography } from "@material-ui/core";
+import { Typography } from '@material-ui/core';
 import SettingsIcon from '@material-ui/icons/Settings';
 import AssessmentIcon from '@material-ui/icons/Assessment';
 import EmailIcon from '@material-ui/icons/Email';
@@ -40,9 +39,9 @@ export default function SideBar({ pageIndex }) {
 
     return (
         <Drawer
-            variant="permanent"
-            className={classes.drawer}
-            classes={{
+          variant="permanent"
+          className={classes.drawer}
+          classes={{
                 paper: classes.drawerPaper,
             }}
         >
@@ -50,23 +49,22 @@ export default function SideBar({ pageIndex }) {
             <Typography>CBD</Typography>
             <Toolbar />
             <List>
-                <ListItem button key={"Settings"} className="sidebar-list-item">
+                <ListItem button key="Settings" className="sidebar-list-item">
                     <SettingsIcon className={classes.largeIcon} />
                     {/* <Typography>Settings</Typography> */}
                 </ListItem>
 
-                <ListItem button key={"Assessment"} className="sidebar-list-item">
+                <ListItem button key="Assessment" className="sidebar-list-item">
                     <AssessmentIcon className={classes.largeIcon} />
                 </ListItem>
 
-                <ListItem button key={"Email"} className="sidebar-list-item">
+                <ListItem button key="Email" className="sidebar-list-item">
                     <EmailIcon className={classes.largeIcon} />
                 </ListItem>
 
-                <ListItem button key={"Logout"} className="sidebar-list-item">
+                <ListItem button key="Logout" className="sidebar-list-item">
                     <ExitIcon className={classes.largeIcon} />
                 </ListItem>
-
 
             </List>
 

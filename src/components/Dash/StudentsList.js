@@ -1,13 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import Toolbar from '@material-ui/core/Toolbar';
-import { Link } from "react-router-dom";
-import { Box, Typography, Paper, Divider, ListItemText, ListItem, List, ListItemAvatar, ListItemSecondaryAction, Avatar } from "@material-ui/core";
-import SettingsIcon from '@material-ui/icons/Settings';
-import AssessmentIcon from '@material-ui/icons/Assessment';
-import EmailIcon from '@material-ui/icons/Email';
-import ExitIcon from '@material-ui/icons/ExitToApp';
+import { Box, Typography, Paper, Divider, ListItemText, ListItem, List, ListItemSecondaryAction, Avatar } from "@material-ui/core";
 
 const flaggedContent = [
     { name: "Nathan", message: "wow you suck", time: "9:14 am", numOffences: 2, phoneNumber: "354-355-1479" },
