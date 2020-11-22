@@ -24,13 +24,15 @@ const useStyles = makeStyles((theme) => ({
 
     top: {
         // marginTop: '100px',
-        marginBottom: '60px',
+        marginBottom: '10px',
         marginTop: "0px",
         paddingTop: "0px",
         width: '100%',
         height: '180px',
         display: 'flex',
         flexDirection: 'row',
+        // backgroundColor:"green",
+
     },
 
     bottom: {

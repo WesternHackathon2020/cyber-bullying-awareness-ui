@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
 
     appBar: {
         zIndex: theme.zIndex.drawer + 1,
+        // backgroundColor: '#48286D',
         backgroundColor: 'white',
         display: 'flex',
         justifyContent: 'space-between',
@@ -38,21 +39,23 @@ export default function NavBar({ pageIndex }) {
     return (
         <div className={classes.root} display="flex">
             <CssBaseline />
-            <AppBar className={classes.appBar} position="fixed"> 
+            <AppBar className={classes.appBar} position="fixed">
                 <Toolbar className={classes.root} flex="1">
                     <Link to="/">
                         <img src={logo} alt="Cyber Bully Detector" style={{ maxHeight: '60px', paddingTop: '10px', paddingLeft: '15px', paddingRight: '15px' }} />
                     </Link>
-                    
-                    <Typography variant="h4" style={{ color: '#1E2B37', paddingLeft: 30 }}>Teacher Dashboard</Typography>
+
+                    {/* <Typography variant="h4" style={{ color: '#1E2B37', paddingLeft: 30 }}>Teacher Dashboard</Typography> */}
+                    {/* <Typography variant="h5" style={{ paddingBottom: 10, fontWeight: 800, color:"#48286D" }}>Cyber Bully Detector - Teacher Dashboard</Typography> */}
+                    <Typography variant="h5" style={{ paddingBottom: 10, fontWeight: 800, color: "#48286D" }}>Cyber Bully Detector</Typography>
                     <Box className={classes.flex}> </Box>
 
                     <IconButton>
-                        <EmailIcon />
+                        <EmailIcon style={{ color: "#48286D" }} />
                     </IconButton>
 
                     <IconButton>
-                        <NotificationsIcon />
+                        <NotificationsIcon style={{ color: "#48286D" }} />
                     </IconButton>
 
                     <Avatar alt="Isaiah Ballah" src={avatar} />
@@ -61,14 +64,13 @@ export default function NavBar({ pageIndex }) {
 
                     <Box width={100}>
                         <Typography style={{ color: '#1E2B37' }}>
-                            Hello, 
-{' '}
-<Typography style={{ color: '#1E2B37', fontWeight: 700 }}>Isaiah!</Typography>
+                            Hello, {' '}
+                            <Typography style={{ color: '#1E2B37', fontWeight: 700 }}>Isaiah!</Typography>
                         </Typography>
                     </Box>
 
                     <IconButton>
-                        <MenuIcon />
+                        <MenuIcon style={{ color: "#48286D" }}/>
                     </IconButton>
 
                 </Toolbar>
