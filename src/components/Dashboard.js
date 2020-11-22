@@ -63,12 +63,11 @@ export default function Dashboard({courseList=[], flaggedMap={Math:[], English:[
         <Box className={classes.root}>
             <Box className={classes.top}>
                 <ClassSelection courseList={courseList} flaggedMap={flaggedMap} onSelection={onClassSelected}/>
-                <StudentInfo flagged={selectedFlagged} />
+                <StudentInfo flagged={selectedFlagged} flaggedList={flaggedMap[selectedClass]} />
             </Box>
 
             <Box className={classes.bottom}>
                 <StudentsList onClicked={onSelectedFlagged} flaggedList={flaggedMap[selectedClass]}/>
-
             </Box>
         </Box>
     );

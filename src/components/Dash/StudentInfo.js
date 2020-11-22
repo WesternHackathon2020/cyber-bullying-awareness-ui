@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function StudentInfo({flagged}) {
+export default function StudentInfo({flagged, flaggedList}) {
     const classes = useStyles();
     const [student, setStudent] = React.useState(null);
     const [pastFlagged, setPassedFlagged] = React.useState(null);
@@ -41,7 +41,10 @@ export default function StudentInfo({flagged}) {
 
         init();
     },);
-    if (flagged == null) return (<div></div>);
+
+    if (flagged == null) 
+        return (<RecentAnalysis flaggedList={flaggedList}/>);
+        // return (<div></div>);
 
     return (
         <Paper style={{ flexGrow: 1, minWidth: "300px", height: "100%", padding: 15, margin: 15 }}>

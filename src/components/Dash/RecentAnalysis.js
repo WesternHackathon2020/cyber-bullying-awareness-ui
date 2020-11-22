@@ -20,17 +20,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function RecentAnalysis({ flagged }) {
+export default function RecentAnalysis({ flaggedList }) {
     const classes = useStyles();
 
     const getTotalFlagged = () => {
-        return flaggedContent.length;
+        return flaggedList?.length || 0;
     }
 
     return (
         <Paper style={{ flexGrow: 1, minWidth: "300px", height: "100%", padding: 15, margin: 15 }}>
-            <Typography variant="h3" style={{ paddingBottom: 15 }}>Recent Analysis</Typography>
-            <Typography variant="h2" style={{ paddingBottom: 15 }}>{getTotalFlagged()} New Offenses</Typography>
+            <Typography variant="h5" style={{ paddingBottom: 15 }}>Recent Analysis</Typography>
+            <Typography variant="h4" style={{ paddingBottom: 15 }}>{getTotalFlagged()} New Offenses</Typography>
 
         </Paper>
     );
