@@ -25,10 +25,11 @@ export default function StudentInfo({ studentName = "Will Hutchinson", phoneNumb
 
     return (
         <Paper style={{ flexGrow: 1, minWidth: "300px", height: "100%", padding: 15, margin: 15 }}>
-            <Typography variant="h3">Student Info</Typography>
+            <Typography variant="h3" style={{paddingBottom: 15}}>Student Info</Typography>
+
             <Typography>Name: {studentName}</Typography>
-            <Typography>Parent or Guardian's Number: {phoneNumber}</Typography>
-            <Typography>Number of offences: {numOffences}</Typography>
+            <Typography>Guardian's Number: {phoneNumber}</Typography>
+            <Typography># Of Offences: {numOffences}</Typography>
         </Paper>
     );
 }

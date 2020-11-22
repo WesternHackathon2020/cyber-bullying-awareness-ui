@@ -18,6 +18,7 @@ import StudentsList from "./Dash/StudentsList";
 const useStyles = makeStyles((theme) => ({
     root: {
         marginLeft: 60,
+        padding: 15,
         flexDirection: "column",
         flexGrow: 1,
         width: '100% - 60px',
@@ -41,7 +42,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Dashboard() {
     const classes = useStyles();
-    const [selectedStudent, setSelectedStudent] = React.useState(null);
+    const [selectedFlagged, setSelectedFlagged] = React.useState(null);
+
+    const onSelectedFlagged = (flagged) => {
+        if (selectedFlagged == flagged)
+            return setSelectedFlagged(null);
+        setSelectedFlagged(flagged);
+    }
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -51,11 +58,11 @@ export default function Dashboard() {
         <Box className={classes.root}>
             <Box className={classes.top}>
                 <ClassSelection />
-                <StudentInfo />
+                {selectedFlagged != null ? <StudentInfo studentName={selectedFlagged?.name}/> : <Box/>}
             </Box>
 
             <Box className={classes.bottom}>
-               <StudentsList/>
+               <StudentsList onClicked={onSelectedFlagged}/>
                 {/* {value == 0 ? <Stats/> : <Box />}
                 {value == 1 ? <ClassList/> : <Box />}
                 {value == 2 ? <StudentsList/> : <Box />} */}
