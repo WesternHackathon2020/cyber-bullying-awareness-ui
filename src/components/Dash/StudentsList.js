@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Box, Typography, Paper, Divider, ListItemText, ListItem, List, ListItemSecondaryAction, Avatar } from "@material-ui/core";
+import { Box, Typography, Paper, Divider, ListItemText, ListItem, List, ListItemSecondaryAction, Avatar, TableContainer, Table, TableHead, TableRow, TableCell, TableBody } from "@material-ui/core";
 
 const flaggedContent = [
     { name: "Nathan", message: "wow you suck", time: "9:14 am", numOffences: 2, phoneNumber: "354-355-1479" },
@@ -42,7 +42,7 @@ export default function StudentList({ onClicked }) {
 
     const getList = () => {
         return (
-            <List style={{maxHeight: '100%', overflow: 'auto'}}>
+            <List style={{ maxHeight: '100%', overflow: 'auto' }}>
                 {flaggedContent.map((content) => {
                     return (
                         <Box>
@@ -76,11 +76,11 @@ export default function StudentList({ onClicked }) {
     return (
         // getList()
         // <Paper style={{ width: "100% - 30px", maxHeight: "100%", padding: 15, margin: 15, marginBottom: 0 }}>
-        <Paper style={{ width: "100% - 30px", maxHeight: "100%",  overflow: 'auto', padding: 15, margin: 15, marginBottom: 0 }}>
+        <Paper style={{ width: "100% - 30px", maxHeight: "100%", overflow: 'auto', padding: 15, margin: 15, marginBottom: 0 }}>
             <Typography >Possible Cyber Bullying Detected</Typography>
 
             {/* <List style={{maxHeight: '100%', overflow: 'auto'}}> */}
-            <List style={{maxHeight: '100%', overflow: 'auto'}}>
+            {/* <List style={{maxHeight: '100%', overflow: 'auto'}}>
                 {flaggedContent.map((content) => {
                     return (
                         <Box>
@@ -106,7 +106,33 @@ export default function StudentList({ onClicked }) {
                         </Box>
                     );
                 })}
-            </List>
+            </List> */}
+
+            <TableContainer component={Paper}>
+                <Table className={classes.table}>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell align="left"> Sender</TableCell>
+                            <TableCell align="left"> Sent To</TableCell>
+                            <TableCell align="left"> Message</TableCell>
+                            <TableCell align="right">Action</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {
+                            rows.map((row) => (
+                                <TableRow key={row.name} Button>
+                                    <TableCell component="th" scope="row">{row.name}</TableCell>
+                                    <TableCell align="left">{row.calories}</TableCell>
+                                    <TableCell align="left">{row.fat}</TableCell>
+                                    <TableCell align="left">{row.carbs}</TableCell>
+                                </TableRow>
+                            ))
+                        }
+                    </TableBody>
+                </Table>
+            </TableContainer>
+
         </Paper>
     );
 }
