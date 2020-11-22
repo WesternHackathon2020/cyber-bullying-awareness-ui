@@ -29,6 +29,9 @@ export default function StudentList({ onClicked }) {
 
     const onClickedFlagged = (flagged) => {
         if (onClicked) onClicked(flagged);
+        if (selected == flagged)
+            return setSelected(null);
+
         setSelected(flagged);
     }
 
