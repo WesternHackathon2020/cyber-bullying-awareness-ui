@@ -17,19 +17,23 @@ const useStyles = makeStyles((theme) => ({
     drawer: {
         width: 150,
         flexShrink: 0,
+        backgroundColor: "#48286D"
     },
     drawerPaper: {
         width: drawerWidth,
+        backgroundColor: "#48286D"
     },
 
     icon: {
         width: 30,
         height: 30,
+        color: "#FFF"
     },
 
     selectedIcon: {
         width: 30,
         height: 30,
+        color: "#FFF"
     },
 
 }));
@@ -50,20 +54,20 @@ export default function SideBar({ pageIndex }) {
             <Toolbar />
             <List>
                 <ListItem button key="Settings" className="sidebar-list-item">
-                    <SettingsIcon className={classes.largeIcon} />
+                    <SettingsIcon style={{color: "white"}} />
                     {/* <Typography>Settings</Typography> */}
                 </ListItem>
 
                 <ListItem button key="Assessment" className="sidebar-list-item">
-                    <AssessmentIcon className={classes.largeIcon} />
+                    <AssessmentIcon style={{color: "white"}} />
                 </ListItem>
 
                 <ListItem button key="Email" className="sidebar-list-item">
-                    <EmailIcon className={classes.largeIcon} />
+                    <EmailIcon style={{color: "white"}} />
                 </ListItem>
 
                 <ListItem button key="Logout" className="sidebar-list-item">
-                    <ExitIcon className={classes.largeIcon} />
+                    <ExitIcon style={{color: "white"}} />
                 </ListItem>
 
             </List>
