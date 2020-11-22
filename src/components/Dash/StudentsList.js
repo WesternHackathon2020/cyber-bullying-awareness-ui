@@ -28,7 +28,7 @@ export default function StudentList({ onClicked, flaggedList=[], openModal = (co
     // console.log(flaggedList);
 
     return (
-        <Box style={{ width: "100% - 30px", maxHeight: "100%", overflow: 'auto', padding: 15, margin: 15, marginBottom: 0 }}>
+        <Box style={{ width: "100% - 30px", maxHeight: "100%", overflow: 'auto', padding: 15, margin: 15, marginBottom: 0, marginTop: 5 }}>
 
             <TableContainer component={Paper}>
                 <Table className={classes.table}>

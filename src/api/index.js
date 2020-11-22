@@ -1,6 +1,6 @@
 import axios from "axios";
-// let apiUrl = "https://cyber-bullying-backend.herokuapp.com/api";
-let apiUrl = "http://localhost:3001/api";
+let apiUrl = "https://cyber-bullying-backend.herokuapp.com/api";
+// let apiUrl = "http://localhost:3001/api";
 
 let Course = {
   getCourses: ()=> axios.get(`${apiUrl}/class/getCourses`),

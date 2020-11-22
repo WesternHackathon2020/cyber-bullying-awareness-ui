@@ -38,7 +38,6 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'row',
         // backgroundColor:"green",
-
     },
 
     bottom: {
@@ -73,6 +72,14 @@ export default function Dashboard({ courseList = [], flaggedMap = { Math: [], En
     }
 
     const resolveSelected = () => {
+        const flagged = selectedFlagged;
+        const student = selectedStudent;
+
+        flaggedMap[selectedClass] = flaggedMap[selectedClass].filter(function (obj) {
+            return obj._id !== flagged._id;
+        });
+        setSelectedStudent(null);
+        setSelectedFlagged(null);
         setIsModelOpen(false);
     }
 
@@ -100,7 +107,7 @@ export default function Dashboard({ courseList = [], flaggedMap = { Math: [], En
                         <Box style={{ display: "flex", flexDirection: "row", alignContent: "center" }}>
                             <Typography style={{ fontWeight: 800, color: "#48286D" }}> Student: </Typography>
                         </Box>
-                        <Typography variant="p" style={{ color:"#101419" }}> {selectedStudent?.name} </Typography>
+                        <Typography variant="p" style={{ color: "#101419" }}> {selectedStudent?.name} </Typography>
 
                         <Box style={{ display: "flex", flexDirection: "row", alignContent: "center" }}>
                             <Typography style={{ fontWeight: 800, color: "#48286D" }}> Incident: </Typography>
@@ -141,7 +148,11 @@ export default function Dashboard({ courseList = [], flaggedMap = { Math: [], En
             <Box className={classes.bottom}>
                 <Button
                     onClick={openModal}
-                >Resolve</Button>
+                    variant="contained"
+                    style={{ marginLeft: 30, color: "#48286D" }}
+                >
+                    Resolve
+                </Button>
                 <StudentsList onClicked={onSelectedFlagged} flaggedList={flaggedMap[selectedClass]} openModal={openModal} />
             </Box>
 
