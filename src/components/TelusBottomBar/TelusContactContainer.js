@@ -39,11 +39,10 @@ export default function TelusContactContainer() {
 
     }
 
-    const telusTitle = <Typography className={classes.telusTitle}>Telus Wise</Typography>
     return (
         <Box className={classes.root}>
             <Typography variant="h6" classeName={classes.title}>Resources by</Typography>
-            <Typography variant="p" classeName={classes.title}>Telus Wise</Typography>
+            <Typography variant="p" classeName={classes.telusTitle}>Telus Wise</Typography>
 
             <Box className={classes.row}>
                 <TelusResourceContainer onClick={onEndBullyingClick}
