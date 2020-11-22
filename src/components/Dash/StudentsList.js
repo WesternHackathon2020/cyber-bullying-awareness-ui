@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export default function StudentList({ onClicked, flaggedList=[] }) {
+export default function StudentList({ onClicked, flaggedList=[], openModal = (cool)=>{console.log(cool);}}) {
     const classes = useStyles();
     const [selected, setSelected] = React.useState(null);
 
@@ -28,7 +28,6 @@ export default function StudentList({ onClicked, flaggedList=[] }) {
     // console.log(flaggedList);
 
     return (
-
         <Box style={{ width: "100% - 30px", maxHeight: "100%", overflow: 'auto', padding: 15, margin: 15, marginBottom: 0 }}>
 
             <TableContainer component={Paper}>
@@ -43,7 +42,7 @@ export default function StudentList({ onClicked, flaggedList=[] }) {
                             <TableCell align="left"> Sent To</TableCell>
 
                             <TableCell align="left"> Message</TableCell>
-                            <TableCell align="right">Action</TableCell>
+                            {/* <TableCell align="center">Action</TableCell> */}
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -57,17 +56,20 @@ export default function StudentList({ onClicked, flaggedList=[] }) {
                                     <TableCell align="left" scope="row" width={73}> <Avatar/> </TableCell>
                                     <TableCell align="left" scope="row" >{row.studentName} </TableCell>
 
-                                    <TableCell align="left" scope="row"> <ForwardIcon/> </TableCell>
+                                    <TableCell align="left" scope="row"> <ForwardIcon style={{color:"#66CC00"}} /> </TableCell>
 
                                     <TableCell align="left" scope="row" width={73}> <Avatar/> </TableCell>
                                     <TableCell align="left">{row.messageTo}</TableCell>
 
                                     <TableCell align="left">{row.contentText}</TableCell>
-                                    <TableCell align="right">
-                                        <Button variant="contained">
+                                    {/* <TableCell align="right">
+                                        <Button 
+                                            variant="contained"
+                                            // onClick={openModal(row)}
+                                        >
                                             Select
                                         </Button>
-                                    </TableCell>
+                                    </TableCell> */}
                                 </TableRow>
                             ))
                         }

@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-export default function StudentInfo({flagged, flaggedList}) {
+export default function StudentInfo({flagged, flaggedList, setSelectedStudent}) {
     const classes = useStyles();
     const [student, setStudent] = React.useState(null);
     const [pastFlagged, setPassedFlagged] = React.useState(null);
@@ -28,6 +28,7 @@ export default function StudentInfo({flagged, flaggedList}) {
                 if (flagged == pastFlagged) return console.log("flag is same so returning");
 
                 const student = (await api.Students.getStudentsByUUId(flagged.studentId)).data;
+                setSelectedStudent(student);
                 console.log(student);
                 setStudent(student);
                 setPassedFlagged(flagged);
