@@ -6,36 +6,11 @@ import PriorityIcon from "@material-ui/icons/PriorityHigh";
 import MailIcon from "@material-ui/icons/Mail";
 import Paper from "@material-ui/core/Paper";
 
+
 const useStyles = makeStyles((theme) => ({
     root: {
-        marginLeft: 60,
-        padding: 15,
-        display: 'flex',
-        flexDirection: 'column',
-        flexGrow: 1,
-        width: '100% - 60px',
-        height: '100%',
-        overflow: 'hidden',
-
-    },
-
-    top: {
-        marginTop: '100px',
-        marginBottom: '60px',
-
-        width: '100%',
-        height: '180px',
-        display: 'flex',
-        flexDirection: 'row',
-    },
-
-    bottom: {
-        paddingBottom: '15px',
-
-        width: '100%',
-        flexGrow: 1,
-        // backgroundColor:"blue",
-        overflow: 'hidden',
+        width:275, height:220,
+        padding:15
     },
 }));
 
@@ -46,11 +21,11 @@ export default function TelusResourceContainer(props) {
     console.log(title)
     console.log(props)
     return (
-        <Box className={classes.root}>
-            {icon === "priority" ? <PriorityIcon/> : <MailIcon/>}
-            <Typography>{title}</Typography>
-            <Paper>{description}</Paper>
-            <Typography onClick={onClick}>View All</Typography>
-        </Box>
+        <Paper className={classes.root}>
+            {icon === "priority" ? <PriorityIcon style={{color:"#4B286D", fontSize: 40}}/> : <MailIcon style={{color:"#4B286D", fontSize: 40}}/>}
+            <Typography variant="h6" style={{color:"#66CC00"}}>{title}</Typography>
+            <Typography >{description}</Typography>
+            <Typography style={{marginTop: 10}} onClick={onClick}>View more</Typography>
+        </Paper>
     );
 }
