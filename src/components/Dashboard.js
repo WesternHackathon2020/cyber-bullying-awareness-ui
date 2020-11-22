@@ -103,7 +103,7 @@ export default function Dashboard({ courseList = [], flaggedMap = { Math: [], En
                 <DialogTitle id="form-dialog-title">Report or Resolve Incident</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
-                        Enter a massage for the principal below. <br />
+                        Enter a message for the principal below. <br />
                         <Box style={{ display: "flex", flexDirection: "row", alignContent: "center" }}>
                             <Typography style={{ fontWeight: 800, color: "#48286D" }}> Student: </Typography>
                         </Box>
